@@ -17,10 +17,12 @@ import javax.persistence.Table;
 @Getter
 @Setter
 @Table(name = "UserDetails")
-public class User {
+public class User{
     @Id
     @GeneratedValue
     private long id;
-    private String email;
+    private String username;
     private String password;
+    private String channel;
+    private String logo;
 }

@@ -19,6 +19,9 @@ public class VideoService {
         video.setVideoUrl(videoDto.getVideoUrl());
         video.setDescription(videoDto.getDescription());
         video.setThumbnail(videoDto.getThumbnail());
+        video.setCategory(videoDto.getCategory());
+        video.setLikes(videoDto.getLikes());
+        video.setTime(videoDto.getTime());
         videoRepository.save(video);
     }
 

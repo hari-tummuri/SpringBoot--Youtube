@@ -15,13 +15,16 @@ public class AuthController {
     private AuthService authService;
 
     @PostMapping("/signUp")
-    public ResponseEntity createUser(@RequestBody UserDto userDto){
+    public ResponseEntity createUser(@RequestBody UserDto userDto) {
         authService.createUser(userDto);
         return new ResponseEntity(HttpStatus.OK);
     }
+
     @PostMapping("/login")
-    public ResponseEntity login(@RequestBody UserDto userDto){
-        authService.login(userDto);
-        return new ResponseEntity(HttpStatus.OK);
+    public boolean login(@RequestBody String username, String password) {
+        if (authService.login(username, password))
+            return true;
+        return false;
+
     }
 }

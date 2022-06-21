@@ -23,4 +23,7 @@ public class Video {
     private String videoUrl;
     private String thumbnail;
     private String description;
+    private String category;
+    private String likes;
+    private String time;
 }
