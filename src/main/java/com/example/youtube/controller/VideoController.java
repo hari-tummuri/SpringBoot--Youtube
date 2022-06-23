@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin("http://localhost:4200/")
+@CrossOrigin("http://localhost:4200")
 @RequestMapping("api/video/")
 public class VideoController {
     @Autowired
@@ -28,5 +28,30 @@ public class VideoController {
         return videoService.getAllVideos();
     }
 
+    @GetMapping("/get/{id}")
+    public Video getVideoById(@PathVariable long id){
+        return videoService.getVideoById(id);
+    }
 
+    @GetMapping("/getRemain/{id}")
+    public List<Video> getRemainingVideos(@PathVariable long id){
+        return videoService.getRemainingVideos(id);
+    }
+    @GetMapping("/getSearch/{searchString}")
+    public List<Video> getMatchedVideos(@PathVariable String searchString){
+        return videoService.getMatchedVideos(searchString);
+    }
+    @GetMapping("myVideos/{channel}")
+    public List<Video> getMyVideos(@PathVariable String channel){
+        return videoService.getMyVideos(channel);
+    }
+    @PutMapping("/updateVideo")
+    public Video updateVideo(@RequestBody Video video){
+       return videoService.updateVideo(video);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteVideo(@PathVariable long id){
+        videoService.deleteVideo(id);
+    }
 }

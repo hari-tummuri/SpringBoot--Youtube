@@ -20,10 +20,23 @@ public class Video {
     private String videoUrl;
     private String thumbnail;
     private String description;
-    private String category;
-    private String likes;
+    private long likes;
     private String time;
-    @ManyToOne()
-    @JoinColumn(name = "id",nullable = false)
-    private Channel channel;
+    private String channel;
+    private String logo;
+
+    @Override
+    public String toString() {
+        return "Video{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", videoUrl='" + videoUrl + '\'' +
+                ", thumbnail='" + thumbnail + '\'' +
+                ", description='" + description + '\'' +
+                ", likes=" + likes +
+                ", time='" + time + '\'' +
+                ", channel='" + channel + '\'' +
+                ", logo='" + logo + '\'' +
+                '}';
+    }
 }

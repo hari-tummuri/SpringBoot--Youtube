@@ -1,5 +1,6 @@
 package com.example.youtube.Dto;
 
+import com.example.youtube.model.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,7 +15,7 @@ public class VideoDto {
     private String videoUrl;
     private String thumbnail;
     private String description;
-    private String category;
-    private String likes;
-    private String time;
+    private long likes;
+    private String channel;
+    private String logo;
 }
